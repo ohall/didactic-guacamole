@@ -1,21 +1,33 @@
 'use strict';
 
-const Hapi = require('@hapi/hapi');
+const hapi = require('@hapi/hapi');
+const { parsePayload, checkHeadersForThing } = require('./lib/handlers');
 
 const init = async () => {
-
-  const server = Hapi.server({
+  const server = hapi.server({
     port: 3000,
-    host: 'localhost'
+    host: 'localhost',
   });
 
   server.route({
     method: 'GET',
-    path: '/',
-    handler: (request, h) => {
+      path: '/',
+    handler: () => '¯\\_(ツ)_/¯'
+  });
 
-      return 'Hello World!';
-    }
+
+
+
+
+
+  server.route({
+    method: 'GET', path: '/checkHeadersForThing',
+      handler: checkHeadersForThing
+  });
+
+  server.route({
+      method: 'PATCH',
+      path: '/parsePayload',handler: parsePayload
   });
 
   await server.start();
@@ -23,7 +35,6 @@ const init = async () => {
 };
 
 process.on('unhandledRejection', (err) => {
-
   console.log(err);
   process.exit(1);
 });
