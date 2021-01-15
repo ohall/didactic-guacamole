@@ -1,0 +1,23 @@
+{
+  "name": "didactic-guacamole",
+  "version": "1.0.0",
+  "description": "`````¯\\_(ツ)_/¯`````",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohall/didactic-guacamole.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohall/didactic-guacamole/issues"
+  },
+  "homepage": "https://github.com/ohall/didactic-guacamole#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.3"
+  }
+}
